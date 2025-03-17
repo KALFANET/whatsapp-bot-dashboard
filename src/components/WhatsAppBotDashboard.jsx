@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Search, FileText, Users, BarChart2, Bell, Settings, Lock, CheckCircle, AlertTriangle, Eye } from 'lucide-react';
+import { Search, FileText, Users, BarChart2, Bell, Settings, Lock, CheckCircle, AlertTriangle, Eye, MessageCircle } from 'lucide-react';
+import WhatsAppMessages from './WhatsAppMessages';
+
 const API_BASE_URL = "http://localhost:3001/api/files";
 const PDF_URL = "https://nm-digitalhub.com/uploads/";
-
 // Main dashboard component
 const WhatsAppBotDashboard = () => {
 const [selectedFile, setSelectedFile] = useState(null);
@@ -211,6 +212,13 @@ const handleDeleteDocument = async (publicId) => {
               <FileText className="ml-2" size={20} />
               <span>שאלות</span>
             </li>
+            <li 
+  className={`mb-2 p-2 rounded-lg cursor-pointer flex items-center ${activeTab === 'whatsappMessages' ? 'bg-teal-50 text-teal-600' : 'hover:bg-gray-100'}`}
+  onClick={() => setActiveTab('whatsappMessages')}
+>
+  <MessageCircle className="ml-2" size={20} />
+  <span>הודעות WhatsApp</span>
+</li>
           </ul>
         </nav>
       </div>
@@ -523,7 +531,7 @@ const handleDeleteDocument = async (publicId) => {
                     </div>
                   </div>
                 </div>
-                
+                {activeTab === 'whatsappMessages' && <WhatsAppMessages />}
                 <div className="mb-6">
                   <h3 className="text-lg font-medium mb-4">הגדרות OCR</h3>
                   <div className="space-y-4">

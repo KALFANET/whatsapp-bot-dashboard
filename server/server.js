@@ -1,35 +1,32 @@
-const express = require('express');
-const cors = require('cors');
-const { sequelize } = require('./models'); // ✅ טוען את כל המודלים דרך index.js
-const uploadRoutes = require('./routes/uploadRoutes');
-const path = require('path');
-const secureFileAccess = require('./middlewares/secureFileAccess');
-const questionsRoutes = require('./routes/questionsRoutes');
-
-const app = express();
-app.use(express.json());
-app.use(cors());
-
-const startServer = async () => {
+router.get('/whatsapp-messages', async (req, res) => {
   try {
-    console.log('🔄 Checking database state...');
-    await sequelize.authenticate(); // בדיקת חיבור למסד הנתונים
-    console.log('✅ Database connection successful.');
-
-    console.log('🔄 Syncing database...');
-    await sequelize.sync({ alter: true }); // שומר נתונים קיימים ומעדכן סכימה
-    console.log('✅ Database synced successfully.');
-
-    // טעינת הנתיבים
-    app.use('/api/files', uploadRoutes);
-    app.use('/api/files/secure', secureFileAccess, express.static(path.join(__dirname, 'uploads')));
-    app.use('/api/questions', questionsRoutes);
-
-    const PORT = process.env.PORT || 3001;
-    app.listen(PORT, () => console.log(`🚀 Server is running on port ${PORT}`));
+      console.log('🔍 Fetching WhatsApp messages...');
+      
+      // בדיקה לגבי קיום הטבלה לפני השאילתה
+      const tableExists = await Message.sequelize.query(
+          "SELECT name FROM sqlite_master WHERE type='table' AND name='Messages';",
+          { type: Message.sequelize.QueryTypes.SELECT }
+      );
+      
+      if (tableExists.length === 0) {
+          console.error('❌ Table Messages does not exist');
+          return res.status(500).json({ 
+              error: 'Database configuration error',
+              details: 'Messages table not found'
+          });
+      }
+      
+      const messages = await Message.findAll({ 
+          order: [['timestamp', 'DESC']]
+      });
+      
+      console.log(`✅ Found ${messages.length} messages`);
+      res.json(messages);
   } catch (error) {
-    console.error('❌ Database sync failed:', error);
+      console.error('❌ Error fetching messages:', error);
+      res.status(500).json({ 
+          error: 'Server error',
+          details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      });
   }
-};
-
-startServer();
+});

@@ -1,43 +1,58 @@
-const sequelize = require('../config/database');
-const Document = require('./Document'); 
-const OpeningQuestion = require('./OpeningQuestion');
+const fs = require('fs');
+const path = require('path');
+const { Sequelize } = require('sequelize');
+const config = require('../config/database'); // ייבוא התצורה במקום אובייקט sequelize
 
-const db = {
-  sequelize,
-  Document,
-  OpeningQuestion
-};
+console.log('🔄 Initializing models...');
 
-const syncDatabase = async () => {
-    try {
-        console.log('🔄 Syncing database...');
-        await sequelize.authenticate(); // ✅ בדיקת חיבור למסד הנתונים
+const db = {};
 
-        // ✅ וידוא שהחיבור למסד הנתונים הושלם לפני שאילתות
-        const queryInterface = sequelize.getQueryInterface();
-        const tables = await queryInterface.showAllTables();
+// יצירת חיבור sequelize מהתצורה
+const sequelize = config.getSequelize ? config.getSequelize() : config;
 
-        // ✅ תיקון - בדיקה תקפה אם טבלה קיימת
-        const normalizedTables = tables.map(table => table.toLowerCase());
-        const missingTables = !normalizedTables.includes('documents') || !normalizedTables.includes('openingquestions');
+// טעינת כל הקבצים בתיקיית models באופן דינמי
+const modelFiles = fs.readdirSync(__dirname)
+  .filter(file => file !== 'index.js' && file.endsWith('.js'));
 
-        if (missingTables) {
-            console.log('⚠️ Tables missing. Creating database from scratch.');
-            await sequelize.sync(); // ✅ יצירת טבלה אם לא קיימת
-        } else {
-            console.log('✅ Tables exist. Synchronizing schema.');
-            await sequelize.sync({ alter: true }); // ✅ עדכון סכימה בלי מחיקה
-        }
+console.log(`📁 Found ${modelFiles.length} model files to load`);
 
-        console.log('✅ Database synced successfully.');
-    } catch (error) {
-        console.error('❌ Database sync failed:', error);
+modelFiles.forEach(file => {
+  try {
+    console.log(`📄 Loading model file: ${file}`);
+    const model = require(path.join(__dirname, file));
+    
+    // לבדוק האם מדובר במודל Sequelize על פי המאפיינים שלו
+    if (model.name) {
+      console.log(`✅ Loaded Sequelize model: ${model.name}`);
+      db[model.name] = model;
+    } else {
+      // אם אין שם מוגדר, משתמש בשם הקובץ (ללא סיומת .js)
+      const modelName = path.basename(file, '.js');
+      console.log(`✅ Loaded model with filename: ${modelName}`);
+      db[modelName] = model;
     }
-};
+  } catch (error) {
+    console.error(`❌ Error loading model ${file}:`, error);
+  }
+});
 
-// ✅ הימנעות מהרצה כפולה
-if (require.main === module) {
-    syncDatabase();
-}
+// קביעת אסוציאציות בין המודלים אם יש
+console.log('🔄 Setting up model associations...');
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    try {
+      db[modelName].associate(db);
+      console.log(`✅ Associations set for model: ${modelName}`);
+    } catch (error) {
+      console.error(`❌ Error setting associations for ${modelName}:`, error);
+    }
+  }
+});
+
+// הוספת sequelize ו-Sequelize לאובייקט db
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+console.log(`✅ Models loaded successfully: ${Object.keys(db).filter(key => key !== 'sequelize' && key !== 'Sequelize').join(', ')}`);
 
 module.exports = db;
