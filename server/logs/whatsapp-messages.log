@@ -1,0 +1,4 @@
+2025-03-17T19:26:52.601Z info: Webhook verification attempt. Mode: subscribe, Token match: true
+2025-03-17T19:26:52.606Z info: Webhook verification successful
+2025-03-17T19:30:25.021Z info: Received webhook callback
+2025-03-17T19:30:25.032Z error: Webhook processing error: SQLITE_ERROR: no such table: Messages
