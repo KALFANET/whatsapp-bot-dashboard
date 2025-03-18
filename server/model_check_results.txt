@@ -1,0 +1,54 @@
+🔍 Checking Sequelize connection...
+✅ Database connection OK
+
+📂 Scanning models directory...
+📄 Found model files: Document.js, Message.js, OpeningQuestion.js
+
+🔍 Inspecting models...
+
+📄 Examining model: Document.js
+  Type: function
+  Model name: Document
+  Table name: Documents
+  ✅ Has standard Sequelize model methods
+  Properties: length, name, prototype, sequelize, options, associations, underscored, tableName, _schema, _schemaDelimiter, rawAttributes, _indexes, primaryKeys, _readOnlyAttributes, _timestampAttributes, _hasReadOnlyAttributes, _dataTypeChanges, _dataTypeSanitizers, _hasBooleanAttributes, _hasDateAttributes, _jsonAttributes, _virtualAttributes, _defaultValues, fieldRawAttributesMap, uniqueKeys, fieldAttributeMap, _hasJsonAttributes, _hasVirtualAttributes, _hasDefaultValues, tableAttributes, primaryKeyAttributes, primaryKeyAttribute, primaryKeyField, _hasPrimaryKeys, _isPrimaryKey, _attributeManipulation, autoIncrementAttribute, _scope, _scopeNames
+  ✅ Has reference to sequelize instance
+  ✅ Has rawAttributes (column definitions)
+  Columns: id, fileName, fileUrl, publicId, status, createdAt, updatedAt
+
+📄 Examining model: Message.js
+  Type: function
+  Model name: Message
+  Table name: Messages
+  ✅ Has standard Sequelize model methods
+  Properties: length, name, prototype, sequelize, options, associations, underscored, tableName, _schema, _schemaDelimiter, rawAttributes, _indexes, primaryKeys, _readOnlyAttributes, _timestampAttributes, _hasReadOnlyAttributes, _dataTypeChanges, _dataTypeSanitizers, _hasBooleanAttributes, _hasDateAttributes, _jsonAttributes, _virtualAttributes, _defaultValues, fieldRawAttributesMap, uniqueKeys, fieldAttributeMap, _hasJsonAttributes, _hasVirtualAttributes, _hasDefaultValues, tableAttributes, primaryKeyAttributes, primaryKeyAttribute, primaryKeyField, _hasPrimaryKeys, _isPrimaryKey, _attributeManipulation, autoIncrementAttribute, _scope, _scopeNames
+  ✅ Has reference to sequelize instance
+  ✅ Has rawAttributes (column definitions)
+  Columns: id, sender, text, timestamp, createdAt, updatedAt
+
+📄 Examining model: OpeningQuestion.js
+  Type: function
+  Model name: OpeningQuestion
+  Table name: OpeningQuestions
+  ✅ Has standard Sequelize model methods
+  Properties: length, name, prototype, sequelize, options, associations, underscored, tableName, _schema, _schemaDelimiter, rawAttributes, _indexes, primaryKeys, _readOnlyAttributes, _timestampAttributes, _hasReadOnlyAttributes, _dataTypeChanges, _dataTypeSanitizers, _hasBooleanAttributes, _hasDateAttributes, _jsonAttributes, _virtualAttributes, _defaultValues, fieldRawAttributesMap, uniqueKeys, fieldAttributeMap, _hasJsonAttributes, _hasVirtualAttributes, _hasDefaultValues, tableAttributes, primaryKeyAttributes, primaryKeyAttribute, primaryKeyField, _hasPrimaryKeys, _isPrimaryKey, _attributeManipulation, autoIncrementAttribute, _scope, _scopeNames
+  ✅ Has reference to sequelize instance
+  ✅ Has rawAttributes (column definitions)
+  Columns: id, question, answerType, options, isActive, createdAt, updatedAt
+
+🔍 Trying to sync models individually...
+
+🔄 Syncing model: Document
+  ✅ Successfully synced model: Document
+
+🔄 Syncing model: Message
+  ✅ Successfully synced model: Message
+
+🔄 Syncing model: OpeningQuestion
+  ✅ Successfully synced model: OpeningQuestion
+
+📊 Checking database tables...
+  Tables in database: Documents, Messages, OpeningQuestions
+
+✅ Check complete
+Results saved to: /Users/kalfanetanelmevorach/whatsapp-bot-dashboard/server/model_check_results.txt

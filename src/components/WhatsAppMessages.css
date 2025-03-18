@@ -1,0 +1,185 @@
+/* WhatsAppMessages.css */
+
+.messages-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* כותרת והגדרות */
+.messages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.refresh-button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.refresh-button:hover {
+    background-color: #1ebe5d;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+}
+
+.search-icon {
+    color: #888;
+    margin-right: 5px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 150px;
+}
+
+/* כפתורי סינון */
+.message-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filter-button {
+    background-color: #ddd;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-button.active {
+    background-color: #25D366;
+    color: white;
+}
+
+.filter-button:hover {
+    background-color: #1ebe5d;
+    color: white;
+}
+
+/* רשימת הודעות */
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* הודעה בודדת */
+.message-item {
+    max-width: 75%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    word-break: break-word;
+}
+
+/* הודעות נכנסות */
+.message-item.incoming {
+    background-color: white;
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* הודעות יוצאות */
+.message-item.outgoing {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+    text-align: right;
+}
+
+/* שולח ההודעה */
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.message-sender {
+    color: #075E54;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* אייקון הודעה יוצאת */
+.outgoing-icon {
+    color: #075E54;
+}
+
+/* טקסט ההודעה */
+.message-content {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* חותמת זמן */
+.message-time {
+    font-size: 12px;
+    color: #888;
+}
+
+/* הודעות ללא תוכן */
+.loading, .error, .no-messages {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+.messages-footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+
+.incoming {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+}
+
+.outgoing {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    text-align: right;
+}

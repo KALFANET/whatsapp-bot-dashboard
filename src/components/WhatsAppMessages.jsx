@@ -1,68 +1,122 @@
-const express = require('express');
-const router = express.Router();
-const axios = require('axios');
-const bodyParser = require('body-parser');
-const Message = require('../models/Message'); // המודל של ההודעות במסד הנתונים
-require('dotenv').config(); // טעינת משתני הסביבה
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { RefreshCcw, Search, Trash2, Send, MessageSquare } from 'lucide-react'; // שימוש באייקונים מקצועיים
+import './WhatsAppMessages.css';
 
-router.use(bodyParser.json());
+function WhatsAppMessages() {
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterType, setFilterType] = useState('all'); // מסנן לפי סוג הודעה
+  const [filterSender, setFilterSender] = useState('all'); // מסנן לפי שולח
 
-// נתיב GET עבור אימות ה-Webhook
-router.get('/webhook', (req, res) => {
-    const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
-    const mode = req.query['hub.mode'];
-    const token = req.query['hub.verify_token'];
-    const challenge = req.query['hub.challenge'];
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('http://localhost:3001/api/whatsapp/whatsapp-messages');
+        setMessages(response.data);
+      } catch (err) {
+        console.error('Error fetching messages:', err);
+        setError('Failed to load messages: ' + (err.response?.data?.error || err.message));
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    if (mode && token) {
-        if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-            console.log('✅ Webhook Verified Successfully');
-            res.status(200).send(challenge);
-        } else {
-            console.error('❌ Webhook verification failed: Invalid token');
-            res.sendStatus(403);
-        }
-    } else {
-        console.error('❌ Webhook verification failed: Missing parameters');
-        res.sendStatus(400);
-    }
-});
+    fetchMessages();
+  }, []);
 
-// נתיב POST שמאזין להודעות נכנסות מ-WhatsApp
-router.post('/webhook', async (req, res) => {
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleString('he-IL', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  };
+
+  const handleDeleteMessage = async (id) => {
     try {
-        if (!req.body.entry || !req.body.entry[0] || !req.body.entry[0].changes) {
-            return res.status(400).json({ error: 'Invalid Webhook Data' });
-        }
-
-        const changes = req.body.entry[0].changes;
-        for (const change of changes) {
-            if (change.value && change.value.messages) {
-                for (const msg of change.value.messages) {
-                    await Message.create({
-                        sender: msg.from,
-                        text: msg.text?.body || '',
-                        timestamp: new Date(msg.timestamp * 1000)
-                    });
-                }
-            }
-        }
-
-        res.status(200).json({ message: 'Messages processed' });
+      await axios.delete(`http://localhost:3001/api/whatsapp/messages/${id}`);
+      setMessages(messages.filter((msg) => msg.id !== id));
     } catch (error) {
-        console.error('❌ Webhook Error:', error);
-        res.status(500).json({ error: 'Server error' });
+      console.error('Error deleting message:', error);
+      alert('Failed to delete message');
     }
-});
+  };
 
-router.get('/whatsapp-messages', async (req, res) => {
-    try {
-        const messages = await Message.findAll({ order: [['timestamp', 'DESC']] });
-        res.json(messages);
-    } catch (error) {
-        console.error('❌ Error fetching messages:', error);
-        res.status(500).json({ error: 'Server error' });
-    }
-});
+  // סינון הודעות לפי סוג ושולח
+  const filteredMessages = messages.filter((msg) => {
+    if (filterType !== 'all' && msg.type !== filterType) return false;
+    if (filterSender !== 'all' && msg.sender !== filterSender) return false;
+    return msg.text.toLowerCase().includes(searchQuery.toLowerCase());
+  });
 
-module.exports = router;
+  return (
+    <div className="messages-container">
+      <div className="messages-header">
+        <h2>הודעות WhatsApp</h2>
+        <div className="actions">
+          <button onClick={() => window.location.reload()} className="refresh-button">
+            <RefreshCcw size={18} /> רענן
+          </button>
+          <div className="search-box">
+            <Search size={18} className="search-icon" />
+            <input
+              type="text"
+              placeholder="חפש הודעות..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+          <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+            <option value="all">כל ההודעות</option>
+            <option value="incoming">הודעות נכנסות</option>
+            <option value="outgoing">הודעות יוצאות</option>
+          </select>
+          <select value={filterSender} onChange={(e) => setFilterSender(e.target.value)}>
+            <option value="all">כל השולחים</option>
+            {[...new Set(messages.map((msg) => msg.sender))].map((sender) => (
+              <option key={sender} value={sender}>{sender}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      {loading && <p className="loading">טוען הודעות...</p>}
+      {error && <p className="error">שגיאה: {error}</p>}
+
+      {filteredMessages.length === 0 ? (
+        <p className="no-messages">אין הודעות להצגה</p>
+      ) : (
+        <div className="messages-list">
+          {filteredMessages.map((message) => (
+            <div key={message.id} className={`message-item ${message.type === 'outgoing' ? 'outgoing' : 'incoming'}`}>
+              <div className="message-header">
+                <span className="message-sender">
+                  {message.type === 'outgoing' ? 'את/ה' : message.sender}
+                  {message.type === 'outgoing' && <Send size={14} className="outgoing-icon" />}
+                  {message.type === 'incoming' && <MessageSquare size={14} className="incoming-icon" />}
+                </span>
+                <button onClick={() => handleDeleteMessage(message.id)} className="delete-button">
+                  <Trash2 size={16} />
+                </button>
+              </div>
+              <div className="message-content">{message.text}</div>
+              <div className="message-time">{formatDate(message.timestamp)}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="messages-footer">
+        <p>סה"כ: {filteredMessages.length} הודעות</p>
+      </div>
+    </div>
+  );
+}
+
+export default WhatsAppMessages;

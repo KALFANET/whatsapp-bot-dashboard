@@ -1,36 +1,27 @@
-const sequelize = require('./database');
-const path = require('path');
-const fs = require('fs');
+// שמור את זה כקובץ server/resetDatabase.js
+const { sequelize } = require('../models');
 
-const resetDatabase = async () => {
+async function resetDatabase() {
   try {
-    console.log('🔄 Checking database connection...');
+    console.log('🔄 Connecting to database...');
     await sequelize.authenticate();
-    console.log('✅ Database connection OK!');
+    console.log('✅ Connection successful');
 
-    console.log('🔄 Resetting database - dropping and recreating all tables...');
-    await sequelize.sync({ force: true });  // מוחק ויוצר מחדש את כל הטבלאות
-    
-    console.log('✅ Database has been reset successfully.');
-    
-    return { success: true, message: 'Database reset complete' };
+    console.log('🔄 Syncing database (creating tables)...');
+    // force: true ימחק טבלאות קיימות וייצור אותן מחדש
+    await sequelize.sync({ force: true });
+    console.log('✅ Database synced successfully');
+
+    console.log('📋 Available models:');
+    Object.keys(sequelize.models).forEach(model => {
+      console.log(`  - ${model}`);
+    });
+
+    process.exit(0);
   } catch (error) {
     console.error('❌ Database reset failed:', error);
-    return { success: false, error };
+    process.exit(1);
   }
-};
-
-// אם הסקריפט מופעל ישירות, בצע איפוס
-if (require.main === module) {
-  resetDatabase()
-    .then(result => {
-      console.log(result.message);
-      process.exit(0);
-    })
-    .catch(err => {
-      console.error('Fatal error:', err);
-      process.exit(1);
-    });
 }
 
-module.exports = resetDatabase;
+resetDatabase();

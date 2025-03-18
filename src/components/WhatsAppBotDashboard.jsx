@@ -72,30 +72,31 @@ useEffect(() => {
       console.error('❌ Error adding question:', error);
     }
   };
+  const fetchDocuments = async () => {
+    setLoading(true);
+    try {
+        const response = await axios.get(API_BASE_URL);
+        console.log('📌 Server Response:', response.data);
+        if (Array.isArray(response.data)) {
+            setDocuments(response.data);
+        } else {
+            setDocuments([]);
+        }
+    } catch (error) {
+        console.error('❌ Error fetching documents:', error);
+        if (error.response) {
+            console.error('📌 Server Response:', error.response.data);
+        }
+        setDocuments([]);
+    } finally {
+        setLoading(false);
+    }
+  };
+  
+  // יש לקרוא לפונקציה לאחר הגדרתה
   useEffect(() => {
     fetchDocuments();
-}, []);
-
-const fetchDocuments = async () => {
-  setLoading(true);
-  try {
-      const response = await axios.get(API_BASE_URL);
-      console.log('📌 Server Response:', response.data);
-      if (Array.isArray(response.data)) {
-          setDocuments(response.data);
-      } else {
-          setDocuments([]);
-      }
-  } catch (error) {
-      console.error('❌ Error fetching documents:', error);
-      if (error.response) {
-          console.error('📌 Server Response:', error.response.data);
-      }
-      setDocuments([]);
-  } finally {
-      setLoading(false);
-  }
-};
+  }, []);
 const handleFileChange = (event) => {
   if (!event.target.files || event.target.files.length === 0) {
       console.warn("⚠️ No file selected.");
@@ -214,8 +215,7 @@ const handleDeleteDocument = async (publicId) => {
             </li>
             <li 
   className={`mb-2 p-2 rounded-lg cursor-pointer flex items-center ${activeTab === 'whatsappMessages' ? 'bg-teal-50 text-teal-600' : 'hover:bg-gray-100'}`}
-  onClick={() => setActiveTab('whatsappMessages')}
->
+  onClick={() => setActiveTab('whatsappMessages')}>
   <MessageCircle className="ml-2" size={20} />
   <span>הודעות WhatsApp</span>
 </li>
@@ -247,6 +247,8 @@ const handleDeleteDocument = async (publicId) => {
         
         {/* Content */}
         <main className="p-6">
+        {activeTab === 'whatsappMessages' && <WhatsAppMessages />}
+        
           {activeTab === 'documents' && (
             <div>
               <div className="flex justify-between items-center mb-6">
@@ -531,7 +533,6 @@ const handleDeleteDocument = async (publicId) => {
                     </div>
                   </div>
                 </div>
-                {activeTab === 'whatsappMessages' && <WhatsAppMessages />}
                 <div className="mb-6">
                   <h3 className="text-lg font-medium mb-4">הגדרות OCR</h3>
                   <div className="space-y-4">
@@ -607,25 +608,24 @@ const handleDeleteDocument = async (publicId) => {
             </div>
           )}
         </main>
-      {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-lg font-semibold mb-4">הוספת שאלה חדשה</h2>
-            <input 
-              type="text" 
-              value={newQuestion} 
-              onChange={(e) => setNewQuestion(e.target.value)} 
-              className="w-full p-2 border rounded-lg mb-4"
-              placeholder="הקלד את השאלה כאן..."
-            />
-            <div className="flex justify-end space-x-2">
-              <button onClick={handleAddQuestion} className="bg-teal-500 text-white px-4 py-2 rounded-lg">שמור</button>
-              <button onClick={() => setShowModal(false)} className="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg">ביטול</button>
-            </div>
-          </div>
-        </div>
-
-      )}; 
+        {showModal && (
+  <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg">
+      <h2 className="text-lg font-semibold mb-4">הוספת שאלה חדשה</h2>
+      <input 
+        type="text" 
+        value={newQuestion} 
+        onChange={(e) => setNewQuestion(e.target.value)} 
+        className="w-full p-2 border rounded-lg mb-4"
+        placeholder="הקלד את השאלה כאן..."
+      />
+      <div className="flex justify-end space-x-2">
+        <button onClick={handleAddQuestion} className="bg-teal-500 text-white px-4 py-2 rounded-lg">שמור</button>
+        <button onClick={() => setShowModal(false)} className="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg">ביטול</button>
+      </div>
+    </div>
+  </div>
+)} {/* הוסר ה-`;` המיותר */}
       </div>
     </div>
   );  

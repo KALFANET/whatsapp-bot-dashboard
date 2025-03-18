@@ -2,3 +2,571 @@
 2025-03-17T19:26:52.606Z info: Webhook verification successful
 2025-03-17T19:30:25.021Z info: Received webhook callback
 2025-03-17T19:30:25.032Z error: Webhook processing error: SQLITE_ERROR: no such table: Messages
+2025-03-17T21:00:00.255Z info: Running scheduled check for unhandled messages
+2025-03-17T21:00:00.327Z error: Error checking for unhandled messages: SQLITE_ERROR: no such table: Messages
+2025-03-17T21:46:11.944Z info: Webhook verification attempt. Mode: subscribe, Token match: true
+2025-03-17T21:46:11.955Z info: Webhook verification successful
+2025-03-17T22:00:00.942Z info: Running scheduled check for unhandled messages
+2025-03-17T22:27:23.412Z info: Webhook verification attempt. Mode: subscribe, Token match: true
+2025-03-17T22:27:23.433Z info: Webhook verification successful
+2025-03-17T22:27:48.847Z info: Retrieving all WhatsApp messages
+2025-03-17T22:27:48.926Z info: Retrieved 0 messages
+2025-03-17T22:31:16.892Z info: Webhook verification attempt. Mode: subscribe, Token match: true
+2025-03-17T22:31:16.902Z info: Webhook verification successful
+2025-03-17T22:32:44.983Z info: Received webhook callback
+2025-03-17T22:32:45.103Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-17T22:32:45.151Z info: Sending WhatsApp template message to: 972532743588
+2025-03-17T22:32:45.676Z error: Error sending WhatsApp message to 972532743588:
+2025-03-17T22:32:45.679Z error: Failed to send welcome template Request failed with status code 401
+2025-03-17T22:32:45.679Z info: Sending WhatsApp text message to: 972532743588
+2025-03-17T22:32:45.821Z error: Error sending WhatsApp message to 972532743588:
+2025-03-17T22:32:45.821Z error: Failed to send fallback text message Request failed with status code 401
+2025-03-17T22:32:45.821Z error: Error sending welcome message to 972532743588: Request failed with status code 401
+2025-03-17T22:35:59.700Z info: Received webhook callback
+2025-03-17T22:35:59.769Z info: New message (ID: 2) from 972532743588: Type=text, Content=בד״כ
+2025-03-17T22:40:32.234Z info: Received webhook callback
+2025-03-17T22:40:32.316Z info: New message (ID: 3) from 972532743588: Type=text, Content=היי
+2025-03-17T22:40:32.352Z info: Sending WhatsApp template message to: 972532743588
+2025-03-17T22:40:33.301Z error: Error sending WhatsApp message to 972532743588:
+2025-03-17T22:40:33.312Z error: Failed to send welcome template Request failed with status code 400
+2025-03-17T22:40:33.312Z info: Sending WhatsApp text message to: 972532743588
+2025-03-17T22:40:34.080Z info: Message sent successfully to 972532743588, response status: 200
+2025-03-17T22:40:34.081Z info: Welcome template sent to 972532743588
+2025-03-17T22:40:35.650Z info: Received webhook callback
+2025-03-17T22:40:36.930Z info: Received webhook callback
+2025-03-17T22:40:36.948Z info: Received webhook callback
+2025-03-17T23:00:00.645Z info: Running scheduled check for unhandled messages
+2025-03-17T23:00:00.728Z warn: ⚠️ Warning: 1 unhandled messages in the last hour
+2025-03-18T00:05:09.150Z info: Retrieving all WhatsApp messages
+2025-03-18T00:05:09.161Z info: Retrieved 0 messages
+2025-03-18T00:06:37.248Z info: Received webhook callback
+2025-03-18T00:06:37.320Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-18T00:06:37.341Z info: Sending WhatsApp template message to: 972532743588
+2025-03-18T00:06:37.986Z error: Error sending WhatsApp message to 972532743588:
+2025-03-18T00:06:37.989Z error: Failed to send welcome template Request failed with status code 401
+2025-03-18T00:06:37.989Z info: Sending WhatsApp text message to: 972532743588
+2025-03-18T00:06:38.172Z error: Error sending WhatsApp message to 972532743588:
+2025-03-18T00:06:38.173Z error: Failed to send fallback text message Request failed with status code 401
+2025-03-18T00:06:38.173Z error: Error sending welcome message to 972532743588: Request failed with status code 401
+2025-03-18T00:10:47.713Z info: Received webhook callback
+2025-03-18T00:10:47.771Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-18T00:10:47.778Z info: Sending WhatsApp template message to: 972532743588
+2025-03-18T00:10:48.659Z error: Error sending WhatsApp message to 972532743588:
+2025-03-18T00:10:48.662Z error: Failed to send welcome template Request failed with status code 400
+2025-03-18T00:10:48.662Z info: Sending WhatsApp text message to: 972532743588
+2025-03-18T00:10:49.683Z info: Message sent successfully to 972532743588, response status: 200
+2025-03-18T00:10:49.684Z info: Welcome template sent to 972532743588
+2025-03-18T00:10:51.218Z info: Received webhook callback
+2025-03-18T00:10:51.220Z info: Received webhook callback
+2025-03-18T00:10:51.736Z info: Received webhook callback
+2025-03-18T00:23:29.729Z info: Received webhook callback
+2025-03-18T00:23:29.795Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-18T00:23:29.805Z info: Sending WhatsApp template message to: 972532743588
+2025-03-18T00:23:30.523Z error: Error sending WhatsApp message to 972532743588:
+2025-03-18T00:23:30.526Z error: Failed to send welcome template Request failed with status code 400
+2025-03-18T00:23:30.526Z info: Sending WhatsApp text message to: 972532743588
+2025-03-18T00:23:31.871Z info: Message sent successfully to 972532743588, response status: 200
+2025-03-18T00:23:31.872Z info: Welcome template sent to 972532743588
+2025-03-18T00:23:32.301Z info: Received webhook callback
+2025-03-18T00:23:32.903Z info: Received webhook callback
+2025-03-18T00:23:32.915Z info: Received webhook callback
+2025-03-18T00:38:38.472Z info: Received webhook callback
+2025-03-18T00:38:38.533Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-18T00:38:38.541Z info: Sending WhatsApp text message to: 972532743588
+2025-03-18T00:38:40.011Z info: Message sent successfully to 972532743588, response status: 200
+2025-03-18T00:38:40.012Z info: Welcome message sent to 972532743588
+2025-03-18T00:38:41.067Z info: Received webhook callback
+2025-03-18T00:38:41.525Z info: Received webhook callback
+2025-03-18T00:38:42.126Z info: Received webhook callback
+2025-03-18T00:40:16.383Z info: Retrieving all WhatsApp messages
+2025-03-18T00:40:16.391Z info: Retrieved 1 messages
+2025-03-18T01:00:00.866Z info: Running scheduled check for unhandled messages
+2025-03-18T01:00:00.919Z warn: ⚠️ Warning: 1 unhandled messages in the last hour
+2025-03-18T01:02:29.050Z info: Retrieving all WhatsApp messages
+2025-03-18T01:02:29.075Z info: Retrieved 1 messages
+2025-03-18T01:11:41.144Z info: Retrieving all WhatsApp messages
+2025-03-18T01:11:41.166Z info: Retrieved 1 messages
+2025-03-18T01:11:41.173Z info: Retrieving all WhatsApp messages
+2025-03-18T01:11:41.175Z info: Retrieved 1 messages
+2025-03-18T01:11:51.120Z info: Retrieving all WhatsApp messages
+2025-03-18T01:11:51.126Z info: Retrieved 1 messages
+2025-03-18T01:12:01.111Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:01.117Z info: Retrieved 1 messages
+2025-03-18T01:12:11.103Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:11.106Z info: Retrieved 1 messages
+2025-03-18T01:12:21.106Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:21.109Z info: Retrieved 1 messages
+2025-03-18T01:12:25.077Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:25.086Z info: Retrieved 1 messages
+2025-03-18T01:12:25.097Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:25.108Z info: Retrieved 1 messages
+2025-03-18T01:12:35.081Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:35.085Z info: Retrieved 1 messages
+2025-03-18T01:12:45.084Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:45.086Z info: Retrieved 1 messages
+2025-03-18T01:12:55.063Z info: Retrieving all WhatsApp messages
+2025-03-18T01:12:55.068Z info: Retrieved 1 messages
+2025-03-18T01:13:05.043Z info: Retrieving all WhatsApp messages
+2025-03-18T01:13:05.045Z info: Retrieved 1 messages
+2025-03-18T01:13:15.074Z info: Retrieving all WhatsApp messages
+2025-03-18T01:13:15.077Z info: Retrieved 1 messages
+2025-03-18T01:13:25.062Z info: Retrieving all WhatsApp messages
+2025-03-18T01:13:25.067Z info: Retrieved 1 messages
+2025-03-18T01:13:35.058Z info: Retrieving all WhatsApp messages
+2025-03-18T01:13:35.075Z info: Retrieved 1 messages
+2025-03-18T01:13:45.076Z info: Retrieving all WhatsApp messages
+2025-03-18T01:13:45.078Z info: Retrieved 1 messages
+2025-03-18T01:13:55.062Z info: Retrieving all WhatsApp messages
+2025-03-18T01:13:55.067Z info: Retrieved 1 messages
+2025-03-18T01:14:05.068Z info: Retrieving all WhatsApp messages
+2025-03-18T01:14:05.073Z info: Retrieved 1 messages
+2025-03-18T01:14:15.049Z info: Retrieving all WhatsApp messages
+2025-03-18T01:14:15.055Z info: Retrieved 1 messages
+2025-03-18T01:14:25.052Z info: Retrieving all WhatsApp messages
+2025-03-18T01:14:25.081Z info: Retrieved 1 messages
+2025-03-18T01:14:35.084Z info: Retrieving all WhatsApp messages
+2025-03-18T01:14:35.087Z info: Retrieved 1 messages
+2025-03-18T01:14:45.081Z info: Retrieving all WhatsApp messages
+2025-03-18T01:14:45.086Z info: Retrieved 1 messages
+2025-03-18T01:14:55.071Z info: Retrieving all WhatsApp messages
+2025-03-18T01:14:55.075Z info: Retrieved 1 messages
+2025-03-18T01:15:05.092Z info: Retrieving all WhatsApp messages
+2025-03-18T01:15:05.095Z info: Retrieved 1 messages
+2025-03-18T01:15:15.081Z info: Retrieving all WhatsApp messages
+2025-03-18T01:15:15.085Z info: Retrieved 1 messages
+2025-03-18T01:15:25.079Z info: Retrieving all WhatsApp messages
+2025-03-18T01:15:25.083Z info: Retrieved 1 messages
+2025-03-18T01:15:35.075Z info: Retrieving all WhatsApp messages
+2025-03-18T01:15:35.078Z info: Retrieved 1 messages
+2025-03-18T01:15:45.045Z info: Retrieving all WhatsApp messages
+2025-03-18T01:15:45.047Z info: Retrieved 1 messages
+2025-03-18T01:15:55.089Z info: Retrieving all WhatsApp messages
+2025-03-18T01:15:55.097Z info: Retrieved 1 messages
+2025-03-18T01:16:05.073Z info: Retrieving all WhatsApp messages
+2025-03-18T01:16:05.084Z info: Retrieved 1 messages
+2025-03-18T01:16:15.057Z info: Retrieving all WhatsApp messages
+2025-03-18T01:16:15.063Z info: Retrieved 1 messages
+2025-03-18T01:16:25.083Z info: Retrieving all WhatsApp messages
+2025-03-18T01:16:25.086Z info: Retrieved 1 messages
+2025-03-18T01:16:35.446Z info: Retrieving all WhatsApp messages
+2025-03-18T01:16:35.514Z info: Retrieved 1 messages
+2025-03-18T01:16:47.001Z info: Retrieving all WhatsApp messages
+2025-03-18T01:16:47.164Z info: Retrieved 1 messages
+2025-03-18T01:17:05.709Z info: Retrieving all WhatsApp messages
+2025-03-18T01:17:06.300Z info: Retrieved 1 messages
+2025-03-18T01:17:06.324Z info: Retrieving all WhatsApp messages
+2025-03-18T01:17:06.691Z info: Retrieved 1 messages
+2025-03-18T01:17:15.127Z info: Retrieving all WhatsApp messages
+2025-03-18T01:17:15.143Z info: Retrieved 1 messages
+2025-03-18T01:17:32.146Z info: Retrieving all WhatsApp messages
+2025-03-18T01:17:32.157Z info: Retrieved 1 messages
+2025-03-18T01:18:32.226Z info: Retrieving all WhatsApp messages
+2025-03-18T01:18:32.272Z info: Retrieved 1 messages
+2025-03-18T01:19:32.076Z info: Retrieving all WhatsApp messages
+2025-03-18T01:19:32.096Z info: Retrieved 1 messages
+2025-03-18T01:20:32.072Z info: Retrieving all WhatsApp messages
+2025-03-18T01:20:32.093Z info: Retrieved 1 messages
+2025-03-18T01:21:32.073Z info: Retrieving all WhatsApp messages
+2025-03-18T01:21:32.076Z info: Retrieved 1 messages
+2025-03-18T01:22:32.071Z info: Retrieving all WhatsApp messages
+2025-03-18T01:22:32.074Z info: Retrieved 1 messages
+2025-03-18T01:23:32.066Z info: Retrieving all WhatsApp messages
+2025-03-18T01:23:32.071Z info: Retrieved 1 messages
+2025-03-18T01:24:32.078Z info: Retrieving all WhatsApp messages
+2025-03-18T01:24:32.080Z info: Retrieved 1 messages
+2025-03-18T01:25:32.060Z info: Retrieving all WhatsApp messages
+2025-03-18T01:25:32.064Z info: Retrieved 1 messages
+2025-03-18T01:26:32.049Z info: Retrieving all WhatsApp messages
+2025-03-18T01:26:32.052Z info: Retrieved 1 messages
+2025-03-18T01:27:32.078Z info: Retrieving all WhatsApp messages
+2025-03-18T01:27:32.085Z info: Retrieved 1 messages
+2025-03-18T01:28:32.071Z info: Retrieving all WhatsApp messages
+2025-03-18T01:28:32.073Z info: Retrieved 1 messages
+2025-03-18T01:29:32.077Z info: Retrieving all WhatsApp messages
+2025-03-18T01:29:32.092Z info: Retrieved 1 messages
+2025-03-18T01:50:44.041Z info: Retrieving all WhatsApp messages
+2025-03-18T01:50:44.060Z info: Retrieved 1 messages
+2025-03-18T01:51:43.974Z info: Retrieving all WhatsApp messages
+2025-03-18T01:51:43.980Z info: Retrieved 1 messages
+2025-03-18T01:52:43.986Z info: Retrieving all WhatsApp messages
+2025-03-18T01:52:43.989Z info: Retrieved 1 messages
+2025-03-18T01:53:43.983Z info: Retrieving all WhatsApp messages
+2025-03-18T01:53:43.987Z info: Retrieved 1 messages
+2025-03-18T01:54:43.990Z info: Retrieving all WhatsApp messages
+2025-03-18T01:54:43.999Z info: Retrieved 1 messages
+2025-03-18T01:55:43.979Z info: Retrieving all WhatsApp messages
+2025-03-18T01:55:43.981Z info: Retrieved 1 messages
+2025-03-18T01:56:43.977Z info: Retrieving all WhatsApp messages
+2025-03-18T01:56:43.979Z info: Retrieved 1 messages
+2025-03-18T01:57:43.974Z info: Retrieving all WhatsApp messages
+2025-03-18T01:57:43.976Z info: Retrieved 1 messages
+2025-03-18T01:58:15.992Z info: Retrieving all WhatsApp messages
+2025-03-18T01:58:15.997Z info: Retrieved 1 messages
+2025-03-18T01:58:25.998Z info: Retrieving all WhatsApp messages
+2025-03-18T01:58:26.005Z info: Retrieved 1 messages
+2025-03-18T01:58:35.999Z info: Retrieving all WhatsApp messages
+2025-03-18T01:58:36.004Z info: Retrieved 1 messages
+2025-03-18T01:58:45.992Z info: Retrieving all WhatsApp messages
+2025-03-18T01:58:45.997Z info: Retrieved 1 messages
+2025-03-18T01:58:55.995Z info: Retrieving all WhatsApp messages
+2025-03-18T01:58:55.999Z info: Retrieved 1 messages
+2025-03-18T01:59:05.994Z info: Retrieving all WhatsApp messages
+2025-03-18T01:59:05.997Z info: Retrieved 1 messages
+2025-03-18T01:59:15.991Z info: Retrieving all WhatsApp messages
+2025-03-18T01:59:15.995Z info: Retrieved 1 messages
+2025-03-18T01:59:25.993Z info: Retrieving all WhatsApp messages
+2025-03-18T01:59:25.996Z info: Retrieved 1 messages
+2025-03-18T01:59:35.997Z info: Retrieving all WhatsApp messages
+2025-03-18T01:59:36.001Z info: Retrieved 1 messages
+2025-03-18T01:59:45.997Z info: Retrieving all WhatsApp messages
+2025-03-18T01:59:46.000Z info: Retrieved 1 messages
+2025-03-18T01:59:55.992Z info: Retrieving all WhatsApp messages
+2025-03-18T01:59:55.995Z info: Retrieved 1 messages
+2025-03-18T02:00:00.438Z info: Running scheduled check for unhandled messages
+2025-03-18T02:00:06.001Z info: Retrieving all WhatsApp messages
+2025-03-18T02:00:06.006Z info: Retrieved 1 messages
+2025-03-18T02:00:15.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:00:15.997Z info: Retrieved 1 messages
+2025-03-18T02:00:25.995Z info: Retrieving all WhatsApp messages
+2025-03-18T02:00:25.999Z info: Retrieved 1 messages
+2025-03-18T02:00:35.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:00:35.997Z info: Retrieved 1 messages
+2025-03-18T02:00:45.995Z info: Retrieving all WhatsApp messages
+2025-03-18T02:00:45.998Z info: Retrieved 1 messages
+2025-03-18T02:00:55.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:00:55.996Z info: Retrieved 1 messages
+2025-03-18T02:01:05.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:01:05.998Z info: Retrieved 1 messages
+2025-03-18T02:01:15.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:01:15.999Z info: Retrieved 1 messages
+2025-03-18T02:01:25.997Z info: Retrieving all WhatsApp messages
+2025-03-18T02:01:26.000Z info: Retrieved 1 messages
+2025-03-18T02:01:36.004Z info: Retrieving all WhatsApp messages
+2025-03-18T02:01:36.009Z info: Retrieved 1 messages
+2025-03-18T02:01:45.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:01:45.996Z info: Retrieved 1 messages
+2025-03-18T02:01:55.999Z info: Retrieving all WhatsApp messages
+2025-03-18T02:01:56.005Z info: Retrieved 1 messages
+2025-03-18T02:02:05.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:02:05.996Z info: Retrieved 1 messages
+2025-03-18T02:02:15.991Z info: Retrieving all WhatsApp messages
+2025-03-18T02:02:15.993Z info: Retrieved 1 messages
+2025-03-18T02:02:25.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:02:25.994Z info: Retrieved 1 messages
+2025-03-18T02:02:36.025Z info: Retrieving all WhatsApp messages
+2025-03-18T02:02:36.059Z info: Retrieved 1 messages
+2025-03-18T02:02:46.001Z info: Retrieving all WhatsApp messages
+2025-03-18T02:02:46.006Z info: Retrieved 1 messages
+2025-03-18T02:02:55.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:02:55.999Z info: Retrieved 1 messages
+2025-03-18T02:03:05.999Z info: Retrieving all WhatsApp messages
+2025-03-18T02:03:06.014Z info: Retrieved 1 messages
+2025-03-18T02:03:15.997Z info: Retrieving all WhatsApp messages
+2025-03-18T02:03:15.999Z info: Retrieved 1 messages
+2025-03-18T02:03:25.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:03:26.003Z info: Retrieved 1 messages
+2025-03-18T02:03:36.002Z info: Retrieving all WhatsApp messages
+2025-03-18T02:03:36.009Z info: Retrieved 1 messages
+2025-03-18T02:03:45.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:03:45.997Z info: Retrieved 1 messages
+2025-03-18T02:03:55.995Z info: Retrieving all WhatsApp messages
+2025-03-18T02:03:55.998Z info: Retrieved 1 messages
+2025-03-18T02:04:05.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:04:06.002Z info: Retrieved 1 messages
+2025-03-18T02:04:15.317Z info: Retrieving all WhatsApp messages
+2025-03-18T02:04:15.353Z info: Retrieved 1 messages
+2025-03-18T02:04:22.568Z info: Retrieving all WhatsApp messages
+2025-03-18T02:04:22.574Z info: Retrieved 1 messages
+2025-03-18T02:04:22.575Z info: Retrieving all WhatsApp messages
+2025-03-18T02:04:22.581Z info: Retrieved 1 messages
+2025-03-18T02:04:32.578Z info: Retrieving all WhatsApp messages
+2025-03-18T02:04:32.583Z info: Retrieved 1 messages
+2025-03-18T02:04:42.580Z info: Retrieving all WhatsApp messages
+2025-03-18T02:04:42.589Z info: Retrieved 1 messages
+2025-03-18T02:04:52.572Z info: Retrieving all WhatsApp messages
+2025-03-18T02:04:52.576Z info: Retrieved 1 messages
+2025-03-18T02:05:02.575Z info: Retrieving all WhatsApp messages
+2025-03-18T02:05:02.581Z info: Retrieved 1 messages
+2025-03-18T02:05:12.577Z info: Retrieving all WhatsApp messages
+2025-03-18T02:05:12.581Z info: Retrieved 1 messages
+2025-03-18T02:05:22.578Z info: Retrieving all WhatsApp messages
+2025-03-18T02:05:22.583Z info: Retrieved 1 messages
+2025-03-18T02:05:32.570Z info: Retrieving all WhatsApp messages
+2025-03-18T02:05:32.573Z info: Retrieved 1 messages
+2025-03-18T02:05:42.580Z info: Retrieving all WhatsApp messages
+2025-03-18T02:05:42.585Z info: Retrieved 1 messages
+2025-03-18T02:05:52.571Z info: Retrieving all WhatsApp messages
+2025-03-18T02:05:52.574Z info: Retrieved 1 messages
+2025-03-18T02:06:02.579Z info: Retrieving all WhatsApp messages
+2025-03-18T02:06:02.584Z info: Retrieved 1 messages
+2025-03-18T02:06:12.575Z info: Retrieving all WhatsApp messages
+2025-03-18T02:06:12.579Z info: Retrieved 1 messages
+2025-03-18T02:06:22.573Z info: Retrieving all WhatsApp messages
+2025-03-18T02:06:22.577Z info: Retrieved 1 messages
+2025-03-18T02:06:32.580Z info: Retrieving all WhatsApp messages
+2025-03-18T02:06:32.585Z info: Retrieved 1 messages
+2025-03-18T02:06:42.574Z info: Retrieving all WhatsApp messages
+2025-03-18T02:06:42.576Z info: Retrieved 1 messages
+2025-03-18T02:06:52.573Z info: Retrieving all WhatsApp messages
+2025-03-18T02:06:52.577Z info: Retrieved 1 messages
+2025-03-18T02:07:02.969Z info: Retrieving all WhatsApp messages
+2025-03-18T02:07:02.974Z info: Retrieved 1 messages
+2025-03-18T02:07:12.965Z info: Retrieving all WhatsApp messages
+2025-03-18T02:07:12.968Z info: Retrieved 1 messages
+2025-03-18T02:07:22.981Z info: Retrieving all WhatsApp messages
+2025-03-18T02:07:22.987Z info: Retrieved 1 messages
+2025-03-18T02:07:32.956Z info: Retrieving all WhatsApp messages
+2025-03-18T02:07:32.961Z info: Retrieved 1 messages
+2025-03-18T02:07:42.945Z info: Retrieving all WhatsApp messages
+2025-03-18T02:07:42.951Z info: Retrieved 1 messages
+2025-03-18T02:07:52.935Z info: Retrieving all WhatsApp messages
+2025-03-18T02:07:52.939Z info: Retrieved 1 messages
+2025-03-18T02:08:17.722Z info: Retrieving all WhatsApp messages
+2025-03-18T02:08:17.728Z info: Retrieved 1 messages
+2025-03-18T02:08:22.545Z info: Retrieving all WhatsApp messages
+2025-03-18T02:08:22.550Z info: Retrieved 1 messages
+2025-03-18T02:08:32.552Z info: Retrieving all WhatsApp messages
+2025-03-18T02:08:32.574Z info: Retrieved 1 messages
+2025-03-18T02:08:42.795Z info: Retrieving all WhatsApp messages
+2025-03-18T02:08:42.902Z info: Retrieved 1 messages
+2025-03-18T02:08:52.552Z info: Retrieving all WhatsApp messages
+2025-03-18T02:08:52.566Z info: Retrieved 1 messages
+2025-03-18T02:09:02.545Z info: Retrieving all WhatsApp messages
+2025-03-18T02:09:02.584Z info: Retrieved 1 messages
+2025-03-18T02:09:12.011Z info: Retrieving all WhatsApp messages
+2025-03-18T02:09:12.018Z info: Retrieved 1 messages
+2025-03-18T02:09:21.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:09:22.010Z info: Retrieved 1 messages
+2025-03-18T02:09:31.997Z info: Retrieving all WhatsApp messages
+2025-03-18T02:09:32.000Z info: Retrieved 1 messages
+2025-03-18T02:09:41.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:09:42.001Z info: Retrieved 1 messages
+2025-03-18T02:09:51.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:09:51.999Z info: Retrieved 1 messages
+2025-03-18T02:10:01.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:10:01.999Z info: Retrieved 1 messages
+2025-03-18T02:10:11.999Z info: Retrieving all WhatsApp messages
+2025-03-18T02:10:12.005Z info: Retrieved 1 messages
+2025-03-18T02:10:21.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:10:22.000Z info: Retrieved 1 messages
+2025-03-18T02:10:31.999Z info: Retrieving all WhatsApp messages
+2025-03-18T02:10:32.003Z info: Retrieved 1 messages
+2025-03-18T02:10:42.005Z info: Retrieving all WhatsApp messages
+2025-03-18T02:10:42.011Z info: Retrieved 1 messages
+2025-03-18T02:10:52.928Z info: Retrieving all WhatsApp messages
+2025-03-18T02:10:52.933Z info: Retrieved 1 messages
+2025-03-18T02:11:02.009Z info: Retrieving all WhatsApp messages
+2025-03-18T02:11:02.013Z info: Retrieved 1 messages
+2025-03-18T02:11:12.002Z info: Retrieving all WhatsApp messages
+2025-03-18T02:11:12.007Z info: Retrieved 1 messages
+2025-03-18T02:11:21.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:11:22.001Z info: Retrieved 1 messages
+2025-03-18T02:11:31.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:11:32.003Z info: Retrieved 1 messages
+2025-03-18T02:11:42.004Z info: Retrieving all WhatsApp messages
+2025-03-18T02:11:42.010Z info: Retrieved 1 messages
+2025-03-18T02:11:51.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:11:51.999Z info: Retrieved 1 messages
+2025-03-18T02:12:02.002Z info: Retrieving all WhatsApp messages
+2025-03-18T02:12:02.007Z info: Retrieved 1 messages
+2025-03-18T02:12:11.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:12:11.999Z info: Retrieved 1 messages
+2025-03-18T02:12:22.001Z info: Retrieving all WhatsApp messages
+2025-03-18T02:12:22.006Z info: Retrieved 1 messages
+2025-03-18T02:12:31.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:12:32.000Z info: Retrieved 1 messages
+2025-03-18T02:12:42.008Z info: Retrieving all WhatsApp messages
+2025-03-18T02:12:42.012Z info: Retrieved 1 messages
+2025-03-18T02:12:51.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:12:52.005Z info: Retrieved 1 messages
+2025-03-18T02:13:01.991Z info: Retrieving all WhatsApp messages
+2025-03-18T02:13:01.994Z info: Retrieved 1 messages
+2025-03-18T02:13:11.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:13:11.999Z info: Retrieved 1 messages
+2025-03-18T02:13:21.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:13:21.997Z info: Retrieved 1 messages
+2025-03-18T02:13:31.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:13:32.001Z info: Retrieved 1 messages
+2025-03-18T02:13:42.003Z info: Retrieving all WhatsApp messages
+2025-03-18T02:13:42.011Z info: Retrieved 1 messages
+2025-03-18T02:13:51.995Z info: Retrieving all WhatsApp messages
+2025-03-18T02:13:51.998Z info: Retrieved 1 messages
+2025-03-18T02:14:01.999Z info: Retrieving all WhatsApp messages
+2025-03-18T02:14:02.001Z info: Retrieved 1 messages
+2025-03-18T02:14:12.000Z info: Retrieving all WhatsApp messages
+2025-03-18T02:14:12.004Z info: Retrieved 1 messages
+2025-03-18T02:14:21.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:14:21.999Z info: Retrieved 1 messages
+2025-03-18T02:14:31.995Z info: Retrieving all WhatsApp messages
+2025-03-18T02:14:31.998Z info: Retrieved 1 messages
+2025-03-18T02:14:42.004Z info: Retrieving all WhatsApp messages
+2025-03-18T02:14:42.013Z info: Retrieved 1 messages
+2025-03-18T02:14:51.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:14:51.997Z info: Retrieved 1 messages
+2025-03-18T02:15:01.996Z info: Retrieving all WhatsApp messages
+2025-03-18T02:15:01.999Z info: Retrieved 1 messages
+2025-03-18T02:15:11.999Z info: Retrieving all WhatsApp messages
+2025-03-18T02:15:12.003Z info: Retrieved 1 messages
+2025-03-18T02:15:21.995Z info: Retrieving all WhatsApp messages
+2025-03-18T02:15:21.998Z info: Retrieved 1 messages
+2025-03-18T02:15:31.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:15:31.997Z info: Retrieved 1 messages
+2025-03-18T02:15:41.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:15:42.001Z info: Retrieved 1 messages
+2025-03-18T02:15:51.995Z info: Retrieving all WhatsApp messages
+2025-03-18T02:15:51.999Z info: Retrieved 1 messages
+2025-03-18T02:16:01.998Z info: Retrieving all WhatsApp messages
+2025-03-18T02:16:02.003Z info: Retrieved 1 messages
+2025-03-18T02:16:12.931Z info: Retrieving all WhatsApp messages
+2025-03-18T02:16:12.936Z info: Retrieved 1 messages
+2025-03-18T02:16:22.933Z info: Retrieving all WhatsApp messages
+2025-03-18T02:16:22.937Z info: Retrieved 1 messages
+2025-03-18T02:16:32.933Z info: Retrieving all WhatsApp messages
+2025-03-18T02:16:32.938Z info: Retrieved 1 messages
+2025-03-18T02:16:42.933Z info: Retrieving all WhatsApp messages
+2025-03-18T02:16:42.939Z info: Retrieved 1 messages
+2025-03-18T02:16:52.925Z info: Retrieving all WhatsApp messages
+2025-03-18T02:16:52.930Z info: Retrieved 1 messages
+2025-03-18T02:17:02.925Z info: Retrieving all WhatsApp messages
+2025-03-18T02:17:02.928Z info: Retrieved 1 messages
+2025-03-18T02:17:44.284Z info: Retrieving all WhatsApp messages
+2025-03-18T02:17:44.331Z info: Retrieved 1 messages
+2025-03-18T02:18:43.935Z info: Retrieving all WhatsApp messages
+2025-03-18T02:18:43.943Z info: Retrieved 1 messages
+2025-03-18T02:19:43.947Z info: Retrieving all WhatsApp messages
+2025-03-18T02:19:43.954Z info: Retrieved 1 messages
+2025-03-18T02:20:43.948Z info: Retrieving all WhatsApp messages
+2025-03-18T02:20:43.951Z info: Retrieved 1 messages
+2025-03-18T02:21:43.950Z info: Retrieving all WhatsApp messages
+2025-03-18T02:21:43.954Z info: Retrieved 1 messages
+2025-03-18T02:22:43.955Z info: Retrieving all WhatsApp messages
+2025-03-18T02:22:43.959Z info: Retrieved 1 messages
+2025-03-18T02:23:43.964Z info: Retrieving all WhatsApp messages
+2025-03-18T02:23:43.966Z info: Retrieved 1 messages
+2025-03-18T02:24:43.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:24:43.995Z info: Retrieved 1 messages
+2025-03-18T02:25:43.973Z info: Retrieving all WhatsApp messages
+2025-03-18T02:25:43.977Z info: Retrieved 1 messages
+2025-03-18T02:26:43.973Z info: Retrieving all WhatsApp messages
+2025-03-18T02:26:43.979Z info: Retrieved 1 messages
+2025-03-18T02:27:43.964Z info: Retrieving all WhatsApp messages
+2025-03-18T02:27:43.966Z info: Retrieved 1 messages
+2025-03-18T02:28:20.984Z info: Retrieving all WhatsApp messages
+2025-03-18T02:28:20.987Z info: Retrieved 1 messages
+2025-03-18T02:28:31.961Z info: Retrieving all WhatsApp messages
+2025-03-18T02:28:31.963Z info: Retrieved 1 messages
+2025-03-18T02:28:41.964Z info: Retrieving all WhatsApp messages
+2025-03-18T02:28:41.969Z info: Retrieved 1 messages
+2025-03-18T02:28:51.957Z info: Retrieving all WhatsApp messages
+2025-03-18T02:28:51.960Z info: Retrieved 1 messages
+2025-03-18T02:29:43.970Z info: Retrieving all WhatsApp messages
+2025-03-18T02:29:43.973Z info: Retrieved 1 messages
+2025-03-18T02:30:30.712Z info: Received webhook callback
+2025-03-18T02:30:30.763Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-18T02:30:30.772Z info: Sending WhatsApp text message to: 972532743588
+2025-03-18T02:30:31.217Z error: Error sending WhatsApp message to 972532743588:
+2025-03-18T02:30:31.217Z error: Error sending welcome message to 972532743588: Request failed with status code 401
+2025-03-18T02:30:43.987Z info: Retrieving all WhatsApp messages
+2025-03-18T02:30:43.990Z info: Retrieved 1 messages
+2025-03-18T02:30:51.979Z info: Retrieving all WhatsApp messages
+2025-03-18T02:30:51.990Z info: Retrieved 1 messages
+2025-03-18T02:31:01.979Z info: Retrieving all WhatsApp messages
+2025-03-18T02:31:01.982Z info: Retrieved 1 messages
+2025-03-18T02:31:11.988Z info: Retrieving all WhatsApp messages
+2025-03-18T02:31:11.994Z info: Retrieved 1 messages
+2025-03-18T02:31:21.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:31:21.996Z info: Retrieved 1 messages
+2025-03-18T02:31:31.985Z info: Retrieving all WhatsApp messages
+2025-03-18T02:31:32.013Z info: Retrieved 1 messages
+2025-03-18T02:31:41.981Z info: Retrieving all WhatsApp messages
+2025-03-18T02:31:41.985Z info: Retrieved 1 messages
+2025-03-18T02:31:56.211Z info: Received webhook callback
+2025-03-18T02:31:56.267Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-18T02:31:56.275Z info: Sending WhatsApp text message to: 972532743588
+2025-03-18T02:31:57.519Z info: Message sent successfully to 972532743588, response status: 200
+2025-03-18T02:31:57.520Z info: Welcome message sent to 972532743588
+2025-03-18T02:31:58.297Z info: Received webhook callback
+2025-03-18T02:31:59.059Z info: Received webhook callback
+2025-03-18T02:31:59.569Z info: Received webhook callback
+2025-03-18T02:32:06.896Z info: Retrieving all WhatsApp messages
+2025-03-18T02:32:06.942Z info: Retrieved 1 messages
+2025-03-18T02:32:10.986Z info: Retrieving all WhatsApp messages
+2025-03-18T02:32:10.991Z info: Retrieved 1 messages
+2025-03-18T02:32:20.986Z info: Retrieving all WhatsApp messages
+2025-03-18T02:32:20.988Z info: Retrieved 1 messages
+2025-03-18T02:32:30.991Z info: Retrieving all WhatsApp messages
+2025-03-18T02:32:30.995Z info: Retrieved 1 messages
+2025-03-18T02:32:40.994Z info: Retrieving all WhatsApp messages
+2025-03-18T02:32:41.001Z info: Retrieved 1 messages
+2025-03-18T02:32:50.987Z info: Retrieving all WhatsApp messages
+2025-03-18T02:32:50.989Z info: Retrieved 1 messages
+2025-03-18T02:33:00.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:33:01.000Z info: Retrieved 1 messages
+2025-03-18T02:33:10.992Z info: Retrieving all WhatsApp messages
+2025-03-18T02:33:10.997Z info: Retrieved 1 messages
+2025-03-18T02:33:20.989Z info: Retrieving all WhatsApp messages
+2025-03-18T02:33:20.992Z info: Retrieved 1 messages
+2025-03-18T02:33:30.993Z info: Retrieving all WhatsApp messages
+2025-03-18T02:33:30.998Z info: Retrieved 1 messages
+2025-03-18T02:33:41.002Z info: Retrieving all WhatsApp messages
+2025-03-18T02:33:41.019Z info: Retrieved 1 messages
+2025-03-18T02:33:51.984Z info: Retrieving all WhatsApp messages
+2025-03-18T02:33:51.989Z info: Retrieved 1 messages
+2025-03-18T02:34:01.963Z info: Retrieving all WhatsApp messages
+2025-03-18T02:34:01.966Z info: Retrieved 1 messages
+2025-03-18T02:34:11.962Z info: Retrieving all WhatsApp messages
+2025-03-18T02:34:11.966Z info: Retrieved 1 messages
+2025-03-18T02:34:21.957Z info: Retrieving all WhatsApp messages
+2025-03-18T02:34:21.958Z info: Retrieved 1 messages
+2025-03-18T02:34:31.967Z info: Retrieving all WhatsApp messages
+2025-03-18T02:34:31.974Z info: Retrieved 1 messages
+2025-03-18T02:34:35.980Z info: Retrieving all WhatsApp messages
+2025-03-18T02:34:35.982Z info: Retrieved 1 messages
+2025-03-18T02:34:42.340Z info: Retrieving all WhatsApp messages
+2025-03-18T02:34:42.342Z info: Retrieved 1 messages
+2025-03-18T02:34:42.344Z info: Retrieving all WhatsApp messages
+2025-03-18T02:34:42.345Z info: Retrieved 1 messages
+2025-03-18T02:36:41.983Z info: Retrieving all WhatsApp messages
+2025-03-18T02:36:42.007Z info: Retrieved 1 messages
+2025-03-18T02:36:51.952Z info: Retrieving all WhatsApp messages
+2025-03-18T02:36:51.977Z info: Retrieved 1 messages
+2025-03-18T02:36:51.979Z info: Retrieving all WhatsApp messages
+2025-03-18T02:36:51.982Z info: Retrieved 1 messages
+2025-03-18T02:38:09.476Z info: Retrieving all WhatsApp messages
+2025-03-18T02:38:09.493Z info: Retrieved 0 messages
+2025-03-18T02:38:16.666Z info: Received webhook callback
+2025-03-18T02:38:16.817Z info: New message (ID: 1) from 972532743588: Type=text, Content=היי
+2025-03-18T02:38:16.846Z info: Sending WhatsApp text message to: 972532743588
+2025-03-18T02:38:17.893Z info: Message sent successfully to 972532743588, response status: 200
+2025-03-18T02:38:17.893Z info: Welcome message sent to 972532743588
+2025-03-18T02:38:19.069Z info: Received webhook callback
+2025-03-18T02:38:19.330Z info: Received webhook callback
+2025-03-18T02:38:19.397Z info: Received webhook callback
+2025-03-18T02:38:22.586Z info: Retrieving all WhatsApp messages
+2025-03-18T02:38:22.593Z info: Retrieved 2 messages
+2025-03-18T02:38:34.707Z info: Retrieving all WhatsApp messages
+2025-03-18T02:38:34.709Z info: Retrieved 2 messages
+2025-03-18T02:38:34.711Z info: Retrieving all WhatsApp messages
+2025-03-18T02:38:34.712Z info: Retrieved 2 messages
+2025-03-18T02:41:53.440Z info: Retrieving all WhatsApp messages
+2025-03-18T02:41:53.458Z info: Retrieved 2 messages
+2025-03-18T02:41:53.466Z info: Retrieving all WhatsApp messages
+2025-03-18T02:41:53.469Z info: Retrieved 2 messages
+2025-03-18T02:56:57.412Z info: Retrieving all WhatsApp messages
+2025-03-18T02:56:57.441Z info: Retrieved 2 messages
+2025-03-18T02:56:57.443Z info: Retrieving all WhatsApp messages
+2025-03-18T02:56:57.447Z info: Retrieved 2 messages
+2025-03-18T02:58:16.366Z info: Received webhook callback
+2025-03-18T02:58:16.516Z info: New message (ID: 3) from 972532743588: Type=text, Content=היי
+2025-03-18T02:58:17.848Z info: Message sent successfully to 972532743588, response status: 200
+2025-03-18T02:58:17.849Z info: Welcome message sent to 972532743588
+2025-03-18T02:58:18.544Z info: Received webhook callback
+2025-03-18T02:58:19.120Z info: Received webhook callback
+2025-03-18T02:58:19.200Z info: Received webhook callback
+2025-03-18T02:58:33.291Z info: Retrieving all WhatsApp messages
+2025-03-18T02:58:33.319Z info: Retrieved 3 messages
+2025-03-18T02:58:33.321Z info: Retrieving all WhatsApp messages
+2025-03-18T02:58:33.322Z info: Retrieved 3 messages
+2025-03-18T03:00:00.858Z info: Running scheduled check for unhandled messages
+2025-03-18T03:00:00.886Z warn: ⚠️ Warning: 3 unhandled messages in the last hour
+2025-03-18T04:00:00.135Z info: Running scheduled check for unhandled messages
