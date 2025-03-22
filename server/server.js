@@ -142,10 +142,10 @@ const startServer = async () => {
     app.listen(PORT, () => {
       console.log(`🚀 Server is running on port ${PORT}`);
       console.log(`📊 API endpoints:`);
-      console.log(`   Health check: http://localhost:${PORT}/api/health`);
-      console.log(`   WhatsApp messages: http://localhost:${PORT}/api/whatsapp/whatsapp-messages`);
-      console.log(`   Files: http://localhost:${PORT}/api/files`);
-      console.log(`   Questions: http://localhost:${PORT}/api/questions`);
+      console.log(`   Health check: https://nm-digitalhub.com/CRM:${PORT}/api/health`);
+      console.log(`   WhatsApp messages: https://nm-digitalhub.com/CRM:${PORT}/api/whatsapp/whatsapp-messages`);
+      console.log(`   Files: https://nm-digitalhub.com/CRM:${PORT}/api/files`);
+      console.log(`   Questions: https://nm-digitalhub.com/CRM:${PORT}/api/questions`);
     });
   } catch (error) {
     console.error('❌ Database sync failed:', error);

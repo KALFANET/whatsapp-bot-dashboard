@@ -1,8 +1,6 @@
 {
   "name": "whatsapp-bot-dashboard",
   "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -29,7 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HOST=0.0.0.0 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "build:css": "tailwindcss build src/index.css -o dist/styles.css"
@@ -55,5 +53,6 @@
   "devDependencies": {
     "postcss": "^8.5.3",
     "tailwindcss": "^3.3.0"
-  }
+  },
+  "proxy": "https://nm-digitalhub.com/CRM"
 }

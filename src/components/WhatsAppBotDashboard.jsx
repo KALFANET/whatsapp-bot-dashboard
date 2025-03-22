@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Search, FileText, Users, BarChart2, Bell, Settings, Lock, CheckCircle, AlertTriangle, Eye, MessageCircle } from 'lucide-react';
 import WhatsAppMessages from './WhatsAppMessages';
 
-const API_BASE_URL = "http://localhost:3001/api/files";
+const API_BASE_URL = "https://nm-digitalhub.com/CRM/api/files";
 const PDF_URL = "https://nm-digitalhub.com/uploads/";
 // Main dashboard component
 const WhatsAppBotDashboard = () => {
@@ -52,7 +52,7 @@ useEffect(() => {
   
   const fetchQuestions = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/questions');
+      const response = await axios.get('https://nm-digitalhub.com/CRM/api/questions');
       setQuestions(response.data);
     } catch (error) {
       console.error('❌ Error fetching questions:', error);
@@ -65,7 +65,7 @@ useEffect(() => {
   
   const handleAddQuestion = async () => {
     try {
-      await axios.post('http://localhost:3001/api/questions', { question: newQuestion, answerType: 'text' });
+      await axios.post('https://nm-digitalhub.com/CRM/api/questions', { question: newQuestion, answerType: 'text' });
       fetchQuestions();
       setShowModal(false);
     } catch (error) {

@@ -15,7 +15,7 @@ function WhatsAppMessages() {
     const fetchMessages = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:3001/api/whatsapp/whatsapp-messages');
+        const response = await axios.get('https://nm-digitalhub.com/CRM/api/whatsapp/whatsapp-messages');
         setMessages(response.data);
       } catch (err) {
         console.error('Error fetching messages:', err);
@@ -40,7 +40,7 @@ function WhatsAppMessages() {
 
   const handleDeleteMessage = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/whatsapp/messages/${id}`);
+      await axios.delete(`https://nm-digitalhub.com/CRM/api/whatsapp/messages/${id}`);
       setMessages(messages.filter((msg) => msg.id !== id));
     } catch (error) {
       console.error('Error deleting message:', error);
