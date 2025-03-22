@@ -1,0 +1,54 @@
+name: Export Project Structure
+
+on:
+  workflow_dispatch:  # מאפשר הפעלה ידנית מהממשק של GitHub
+
+jobs:
+  export-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create project structure
+        run: |
+          echo "=== Project Directory Structure ===" > project-structure.txt
+          find . -type d -not -path "*/node_modules*" -not -path "*/\.*" | sort >> project-structure.txt
+          
+          echo -e "\n\n=== Main Files List ===" >> project-structure.txt
+          find . -type f -name "*.js" -o -name "*.jsx" -o -name "*.json" -o -name "*.html" -o -name "*.css" | grep -v "node_modules" | sort >> project-structure.txt
+          
+          echo -e "\n\n=== Package.json Files ===" >> project-structure.txt
+          echo "Root package.json:" >> project-structure.txt
+          if [ -f "package.json" ]; then
+            cat package.json >> project-structure.txt
+          else
+            echo "Not found" >> project-structure.txt
+          fi
+          
+          echo -e "\n\nServer package.json:" >> project-structure.txt
+          if [ -f "server/package.json" ]; then
+            cat server/package.json >> project-structure.txt
+          else
+            echo "Not found" >> project-structure.txt
+          fi
+          
+          echo -e "\n\n=== Main JavaScript Files ===" >> project-structure.txt
+          if [ -f "server/server.js" ]; then
+            echo "server/server.js (first 30 lines):" >> project-structure.txt
+            head -n 30 server/server.js >> project-structure.txt
+            echo -e "\n(truncated)" >> project-structure.txt
+          fi
+          
+          APP_FILE=$(find "./src" -name "App.js" -o -name "app.js" 2>/dev/null | head -n 1)
+          if [ ! -z "$APP_FILE" ]; then
+            echo -e "\n\nApp.js (first 30 lines):" >> project-structure.txt
+            head -n 30 "$APP_FILE" >> project-structure.txt
+            echo -e "\n(truncated)" >> project-structure.txt
+          fi
+
+      - name: Upload structure as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: project-structure
+          path: project-structure.txt
